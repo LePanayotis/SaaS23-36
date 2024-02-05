@@ -30,7 +30,7 @@ The user utilizes their **quotas**, which can be **bought** through our applicat
 | Όνομα | Α.Μ. | email |
 | --- | --- | --- |
 | Κάζδαγλη Αριάδνη | 03118838 | el18838@mail.ntua.gr |
-| Παππαγιανάκης Παναγιώτης | 03119055 | el19055@mail.ntua.gr |
+| Παπαγιαννάκης Παναγιώτης | 03119055 | el19055@mail.ntua.gr |
 | Παράνομος Ιωάννης | 03118021 | el18021@mail.ntua.gr |
 
 <br>
