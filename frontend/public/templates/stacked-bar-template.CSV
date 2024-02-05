@@ -1,0 +1,25 @@
+xAxis Label;Dataset;value;Background Colour;Border Colour;Title
+Chardonnay;Greece;10;#0000ff33;blue;Wine varietal preference of adult population
+Malagousia;Greece;23;;;
+Montepulciano;Greece;7;;;
+Chianti;Greece;20;;;
+Petit Verdot;Greece;10;;;
+Pinot Noir;Greece;12;;;
+Gewurztraminer;Greece;7;;;
+Merlot;Greece;20;;;
+Chardonnay;Italy;20;#00ff0033;green;
+Malagousia;Italy;5;;;
+Montepulciano;Italy;33;;;
+Chianti;Italy;27;;;
+Petit Verdot;Italy;5;;;
+Pinot Noir;Italy;10;;;
+Gewurztraminer;Italy;12;;;
+Merlot;Italy;8;;;
+Chardonnay;France;30;#ff000033;red;
+Malagousia;France;4;;;
+Montepulciano;France;6;;;
+Chianti;France;20;;;
+Petit Verdot;France;15;;;
+Pinot Noir;France;15;;;
+Gewurztraminer;France;5;;;
+Merlot;France;5;;;

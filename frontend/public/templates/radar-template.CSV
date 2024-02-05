@@ -1,0 +1,16 @@
+Label;Dataset;Value;Background Colour;Border Colour;Title
+Chardonnay;Greece;15;#0000ff33;blue;Wine Preference in Europe
+Sauvignon Blanc;Greece;35;;;
+Viogner;Greece;5;;;
+Riesling;Greece;20;;;
+Assyrtiko;Greece;25;;;
+Chardonnay;France;30;#ff000033;red;
+Sauvignon Blanc;France;30;;;
+Viogner;France;20;;;
+Riesling;France;15;;;
+Assyrtiko;France;5;;;
+Chardonnay;Italy;20;#00ff0033;green;
+Sauvignon Blanc;Italy;20;;;
+Viogner;Italy;20;;;
+Riesling;Italy;12;;;
+Assyrtiko;Italy;8;;;

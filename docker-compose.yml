@@ -1,0 +1,138 @@
+services:
+  users:
+    build:
+      context: ./user-management
+      dockerfile: Dockerfile
+    networks:
+      - frontend-users
+      - users-quotas-db
+    depends_on:
+      - mongo
+    env_file:
+      - ./.env
+  
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - '443:443'
+    networks:
+      - frontend-chartsdb
+      - frontend-users
+      - frontend-charts
+    depends_on:
+      - quotas
+      - database
+      - users
+    environment:
+      - TZ=Europe/Athens
+    env_file:
+      - ./.env
+      - ./keys.env
+      
+  polar-area:
+    build:
+      context: ./charts-microservices/polar-area-ms
+      dockerfile: Dockerfile
+    networks:
+      - charts-chartsdb
+      - frontend-charts
+    env_file:
+      - ./.env
+
+  scatter:
+    build:
+      context: ./charts-microservices/scatter-ms
+      dockerfile: Dockerfile
+    networks:
+      - charts-chartsdb
+      - frontend-charts
+    env_file:
+      - ./.env
+  
+  bubble:
+    build:
+      context: ./charts-microservices/bubble-ms
+      dockerfile: Dockerfile
+    networks:
+      - charts-chartsdb
+      - frontend-charts
+    env_file:
+      - ./.env
+
+  radar:
+    build:
+      context: ./charts-microservices/radar-ms
+      dockerfile: Dockerfile
+    networks:
+      - charts-chartsdb
+      - frontend-charts
+    env_file:
+      - ./.env
+
+  stacked-bar:
+    build:
+      context: ./charts-microservices/stacked-bar-ms
+      dockerfile: Dockerfile
+    networks:
+      - charts-chartsdb
+      - frontend-charts
+    env_file:
+      - ./.env
+
+  line:
+    build:
+      context: ./charts-microservices/line-ms
+      dockerfile: Dockerfile
+    networks:
+      - charts-chartsdb
+      - frontend-charts
+    env_file:
+      - ./.env
+
+  quotas:
+    build:
+      context: ./quotas-management
+      dockerfile: Dockerfile
+    networks:
+      - frontend-users
+      - users-quotas-db
+    depends_on:
+      - mongo
+    env_file:
+      - ./.env
+  
+  database:
+    build:
+      context: ./database-ms
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    networks:
+      - charts-chartsdb
+      - charts-db
+      - frontend-chartsdb
+    depends_on:
+      - mongo
+    env_file:
+      - ./.env
+      - ./keys.env
+
+  mongo:
+    image: mongo
+    networks:
+      - charts-db
+      - users-quotas-db
+    ports:
+      - '27018:27017'
+    env_file:
+      - ./.env
+
+networks:
+  frontend-users:
+  frontend-charts:
+  users-quotas-db:
+  frontend-chartsdb:
+  charts-db:
+  charts-chartsdb:
